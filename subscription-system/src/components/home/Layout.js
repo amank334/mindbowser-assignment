@@ -127,10 +127,10 @@ export default function Layout() {
           </IconButton>
           </Link>
           <Typography variant="h6" noWrap>
-            ABC Ltd. India
+            Manage Subscriptions
           </Typography>
           <Button href="#" color="secondary" variant="outlined" className={classes.link}>
-            Login
+            Logout
         </Button>
         </Toolbar>
       </AppBar>
