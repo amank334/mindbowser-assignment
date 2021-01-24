@@ -83,7 +83,6 @@ class Login extends React.Component {
     AuthenticationService
             .executeBasicAuthenticationService(this.state.email, this.state.password)
             .then(() => {
-              this.props.signIn(1);
               AuthenticationService.registerSuccessfulLogin(this.state.email, this.state.password, true)
                 this.props.history.push(`/home`)
             }).catch(() => {
@@ -95,8 +94,8 @@ class Login extends React.Component {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <div>
-          <Avatar >
+        <div className={this.props.classes.paper}>
+          <Avatar className={this.props.classes.avatar} >
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -139,7 +138,7 @@ class Login extends React.Component {
               fullWidth
               variant="contained"
               color="primary"
-              //className={this.props.classes.submit}
+              className={this.props.classes.submit}
             >
               Sign in
             </Button>
@@ -159,19 +158,5 @@ class Login extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-    console.log(state);
-    return {
-      isSignedIn: state.auth.isSignedIn,
-    };
-  };
-  // export default connect(mapStateToProps, { signIn })(
-  //   withStyles(styles)(Login)
-  // );
-//  export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App));
-//export default withStyles(styles)(Login);
-// export default compose(
-//   withStyles(styles, { name: 'Login' }),
-//   connect(mapStateToProps, { signIn })
-// )(Login);
-export default connect(mapStateToProps, { signIn })(Login);
+
+export default withStyles(styles)(Login);
