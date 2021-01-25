@@ -23,6 +23,7 @@ Full Stack Developer assignement
   * This is a Spring Boot application . To run this application find below pre-requisite.
     - Java 8 or above
     - maven (optional)
+    - MySQL 8 or above
     
   * Two ways to run application : 
   
