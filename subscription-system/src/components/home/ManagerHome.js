@@ -58,17 +58,13 @@ class ManagerHome extends React.Component {
   componentDidMount() {
     console.log("Fetching employee list");
     endpoint
-      .get("/employees", {
-        headers: {
-          authorization: "Basic " + window.btoa("test1@gmail.com" + ":" + "1234"),
-        },
-      })
+      .get("/employees")
       .then((response) => {
         console.log(response);
         this.setState({ employees: response.data });
       });
   }
-
+ 
   columns = [
     { title: "Employee Id", field: "employeeId", type: "numeric" },
     { title: "First Name", field: "firstName" },

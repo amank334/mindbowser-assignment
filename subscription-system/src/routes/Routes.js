@@ -7,7 +7,7 @@ export default function RouteWrapper({
   isPrivate,
   ...rest
 }) {
-  const signed = true;
+  const signed = store.getState().auth.isSignedIn;
 
   /**
    * Redirect user to Login page if he tries to access a private route
