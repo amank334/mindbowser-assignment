@@ -27,6 +27,7 @@ public class SecurityConfigBasicAuth extends WebSecurityConfigurerAdapter {
 		http.csrf()
 		.disable()
 		.authorizeRequests()
+		.antMatchers("/register").permitAll()
 		.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 		.anyRequest().authenticated()
 		.and().httpBasic();

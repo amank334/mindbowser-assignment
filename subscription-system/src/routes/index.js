@@ -13,7 +13,7 @@ export default function Routes() {
       <Route path="/" exact component={Login} />
       <Route path="/register" exact component={Register} />
       <Route path="/home" exact component={ManagerHome} isPrivate />
-      <Route path="/plans" exact component={SubscriptionPlans} isPrivate />
+      <Route path="/plans" exact component={SubscriptionPlans}  />
       {/* redirect user to SignIn page if route does not exist and user is not authenticated */}
       <Route component={Login} />
     </Switch>
